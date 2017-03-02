@@ -1,0 +1,38 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+.wrapper {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.left {
+	display: inline-block;
+	vertical-align: top;
+	width: 760px;
+}
+
+.right {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.info {
+	position: fixed;
+	border: 20px solid red;
+	width: 190px;
+	display: none;
+}
+
+ul {
+	padding-left: 10px;
+	list-style-position: inside;
+}
