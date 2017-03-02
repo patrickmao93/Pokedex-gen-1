@@ -9,11 +9,12 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			for (var i = 1; i <= 151; i++) {
-				$(".left").append("<img id=\"" + i + "\" src=\"http://pokeapi.co/media/img/" + i + ".png\">")
+				$(".left").append("<img id=\"" + i + "\" class=\"pokemon\"" + "src=\"http://pokeapi.co/media/img/" + i + ".png\">")
 			}
 
 			//when a pokemon is clicked, show it's info in right box
-			$("img").click(function() {
+			$(".pokemon").click(function() {
+				var src = $(this).attr("src");
 				//reset
 				$("#name").text("");
 				$("#type").children().remove();
@@ -28,6 +29,7 @@
 					console.log(res);
 					//assign name
 					$("#name").text(res.name);
+					$("#profile").attr("src", src);
 					//assign type
 					for (var i = 0; i < res.types.length; i++) {
 						$("#type").append("<li>" + res.types[i].name + "</li>");
@@ -50,6 +52,7 @@
 		<div class="right">
 			<div class="info">
 				<h2 id="name"></h2>
+				<img id="profile" src="" alt="">
 				<h4>Types</h4>
 				<ul id="type"></ul>
 				<h4>Height</h4>
